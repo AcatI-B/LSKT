@@ -5,11 +5,11 @@ import torch
 import tomlkit
 from tqdm import tqdm
 import sys
-sys.path.append('/home/q22301200/current/KT_module/LSKT-main')
+sys.path.append('yourPath')
 from LSKT.data import KTData
 from LSKT.eval import Evaluator
 
-DATA_DIR = "/home/q22301200/current/KT_module/LSKT-main/data"
+DATA_DIR = "yourPath/data"
 
 # configure the main parser
 parser = ArgumentParser()
@@ -39,7 +39,7 @@ parser.add_argument("--lambda", help="CL loss weight", type=float, default=0.1, 
 parser.add_argument("-emb", "--emb_method", default = "3pl", help="choose emb_method")
 
 # snapshot setup
-parser.add_argument("-o", "--output_dir", default="/home/q22301200/current/KT_module/LSKT-main/result", help="directory to save model files and logs")
+parser.add_argument("-o", "--output_dir", default="yourPath/result", help="directory to save model files and logs")
 parser.add_argument("-f", "--from_file", help="resume training from existing model file", default=None)
 
 # training logic

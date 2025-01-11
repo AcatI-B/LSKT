@@ -1,6 +1,6 @@
-# DTransformer
+# LSKT
 
-Code for _Tracing Knowledge Instead of Patterns: Stable Knowledge Tracing with Diagnostic Transformer_ (accepted at WWW23).
+Code for _Learning states enhanced knowledge tracing: Simulating the diversity in real-world learning process_ 
 
 ## Installation
 
@@ -12,22 +12,17 @@ poetry install
 
 ### Train
 
-Train DTransformer with CL loss:
+Train LSKT:
 
 ```bash
-python scripts/train.py -m DTransformer -d [assist09,assist17,algebra05,statics] -bs 32 -tbs 32 -p -cl --proj [-o output/DTransformer_assist09] [--device cuda]
+python scripts/train.py -m LSKT -d assist09 -bs 16 -tbs 16 -p -emb 3pl [-o output/assist09_result] [--device cuda]
 ```
 
-For more options, run:
-
-```bash
-python scripts/train.py -h
-```
 
 ### Evaluate
 
 Evaluate DTransformer:
 
 ```bash
-python scripts/test.py -m DTransformer -d [assist09,assist17,algebra05,statics] -bs 32 -p -f [output/best_model.pt] [--device cuda]
+python scripts/test.py -m LSKT -d assist09 -bs 16 -tbs 16 -p -emb 3pl -f assist09_result/**.pt [--device cuda]
 ```
