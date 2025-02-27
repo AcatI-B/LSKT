@@ -21,7 +21,7 @@ python scripts/train.py -m LSKT -d assist09 -bs 16 -tbs 16 -p -emb 3pl [-o outpu
 
 ### Evaluate
 
-Evaluate DTransformer:
+Evaluate LSKT:
 
 ```bash
 python scripts/test.py -m LSKT -d assist09 -bs 16 -tbs 16 -p -emb 3pl -f assist09_result/**.pt [--device cuda]
